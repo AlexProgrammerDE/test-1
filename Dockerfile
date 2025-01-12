@@ -4,6 +4,7 @@ WORKDIR /work/src
 
 COPY ./src/Aptabase.csproj /work/src
 
+ARG TARGETARCH
 RUN dotnet restore "./Aptabase.csproj" -a $TARGETARCH
 
 COPY ./etc/clickhouse /work/etc/clickhouse

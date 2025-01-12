@@ -23,7 +23,7 @@ COPY ./src ./
 RUN npm run build
 
 # Final
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
 COPY --from=server /work/publish .
